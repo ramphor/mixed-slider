@@ -1,0 +1,11 @@
+{
+  "name": "sharp-slider",
+  "version": "1.0.0",
+  "description": "=== Smart Slider 3 === Contributors: nextendweb Tags: slider, wordpress slider, image slider, layer slider, responsive slider, slideshow, fullwidth slider, post slider, horizontal slider, vertical slider, photo slider, video slider Donate link: https://sites.fastspring.com/nextend/product/smartslider3donate Requires at least: 4.9 Tested up to: 5.7 Stable tag: 3.5.0.9 Requires PHP: 7.0 License: GPLv3 or later License URI: http://www.gnu.org/licenses/gpl-3.0.html",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "GPL-3.0-or-later"
+}

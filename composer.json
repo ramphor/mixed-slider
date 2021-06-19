@@ -1,0 +1,11 @@
+{
+    "name": "ramphor/sharp-slider",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Puleeno Nguyen",
+            "email": "puleeno@gmail.com"
+        }
+    ],
+    "require": {}
+}
