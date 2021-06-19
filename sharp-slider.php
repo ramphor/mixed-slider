@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Smart Slider 3
+Plugin Name: Sharp Slider
 Plugin URI: https://smartslider3.com/
 Description: The perfect all-in-one responsive slider solution for WordPress.
 Version: 3.5.0.9
