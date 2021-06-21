@@ -18,9 +18,9 @@ class SmartSlider3Info {
 
     public static $channel = 'stable';
 
-    public static $revision = '569f102c8f61911b73874a859b245fe446ead99b';
+    public static $revision = 'e32fbe5bdc314f203b6426cdc755ece4c8514b7b';
 
-    public static $revisionShort = '569f102c';
+    public static $revisionShort = 'e32fbe5b';
 
     public static $branch = 'release-3.5.0.9';
 
@@ -48,7 +48,7 @@ class SmartSlider3Info {
 
     public static function shouldSkipLicenseModal() {
         return true;
-    
+
     }
 
     public static function applySource(&$params) {
@@ -93,7 +93,7 @@ class SmartSlider3Info {
     public static function getSampleSlidesUrl($params = array()) {
         self::applySource($params);
         return 'https://smartslider3.com/slides/' . self::$version . '/free/?' . http_build_query($params);
-    
+
     }
 
     public static function getActivationUrl($params = array()) {
@@ -127,7 +127,7 @@ class SmartSlider3Info {
 
     public static function api($_posts, $returnUrl = false) {
         $isPro = 0;
-    
+
         $posts = array(
             'product' => self::$product,
             'pro'     => $isPro
@@ -191,7 +191,7 @@ class SmartSlider3Info {
 
     public static function sliderChanged() {
         do_action('smartslider3_slider_changed');
-    
+
     }
 }
 
