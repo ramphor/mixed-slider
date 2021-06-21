@@ -12,6 +12,10 @@ function smart_slider_3_plugins_loaded() {
     define('NEXTEND_SMARTSLIDER_3_SLUG', NEXTEND_SMARTSLIDER_3_FREE_SLUG);
 
     require_once dirname(__FILE__) . '/Defines.php';
+
+    // Load Composer autoloader
+    require_once sprintf('%s/vendor/autoload.php', dirname(__FILE__));
+
     require_once(SMARTSLIDER3_LIBRARY_PATH . '/Autoloader.php');
 
     SmartSlider3Platform::getInstance();
