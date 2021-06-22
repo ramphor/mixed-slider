@@ -20,7 +20,7 @@ class AdminHelper {
 
         add_action('admin_init', function () {
             require_once dirname(__FILE__) . '/free/notice.php';
-        
+
         });
 
         add_action('init', array(
@@ -98,14 +98,8 @@ class AdminHelper {
             $this,
             'display_help'
         ));
-        add_submenu_page(NEXTEND_SMARTSLIDER_3_URL_PATH, 'Go Pro', '<span class="smart_slider__admin_menu_go_pro"><span class="dashicons dashicons-unlock" style="font-size: 17px"></span>' . n2_('Go Pro') . '</span>', 'smartslider', NEXTEND_SMARTSLIDER_3_URL_PATH . '-go-pro', array(
-            $this,
-            'display_go_pro'
-        ));
-    
 
         wp_enqueue_style('dashicons-smart-slider', HelperTinyMCE::getAssetsUri() . '/dist/wordpress-admin-menu.min.css', array('dashicons'));
-
     }
 
     public function display_controller($controller, $action = 'index', $ajax = false) {
