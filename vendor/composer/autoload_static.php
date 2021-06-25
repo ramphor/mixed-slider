@@ -11,9 +11,9 @@ class ComposerStaticInit445413847c2f6b56242cce81a8be2928
         array (
             'Ramphor\\SharpSlider\\' => 20,
         ),
-        'N' => 
+        'J' => 
         array (
-            'Nextend\\' => 8,
+            'Jankx\\Asset\\' => 12,
         ),
     );
 
@@ -22,9 +22,9 @@ class ComposerStaticInit445413847c2f6b56242cce81a8be2928
         array (
             0 => __DIR__ . '/../..' . '/Ramphor/SharpSlider',
         ),
-        'Nextend\\' => 
+        'Jankx\\Asset\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Nextend',
+            0 => __DIR__ . '/..' . '/jankx/asset/src',
         ),
     );
 

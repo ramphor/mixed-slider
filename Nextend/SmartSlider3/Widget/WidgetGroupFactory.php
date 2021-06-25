@@ -12,6 +12,8 @@ use Nextend\SmartSlider3\Widget\Group\Bullet;
 use Nextend\SmartSlider3\Widget\Group\Shadow;
 use Nextend\SmartSlider3\Widget\Group\Thumbnail;
 
+use Ramphor\SharpSlider\Widget\Group\TextTab;
+
 class WidgetGroupFactory {
 
     use SingletonTrait, PluggableTrait;
@@ -20,13 +22,15 @@ class WidgetGroupFactory {
     private static $groups = array();
 
     protected function init() {
-
         new Arrow();
         new Autoplay();
         new Bar();
         new Bullet();
         new Shadow();
         new Thumbnail();
+
+        // The features develop by Ramphor Premium
+        new TextTab();
 
         $this->makePluggable('SliderWidgetGroup');
     }

@@ -22,7 +22,6 @@ class ArrowImageFrontend extends AbstractWidgetFrontend {
 
         parent::__construct($sliderWidget, $widget, $params);
 
-
         if ($this->isRenderable('previous')) {
             $this->addToPlacement($this->key . 'previous-position-', array(
                 $this,

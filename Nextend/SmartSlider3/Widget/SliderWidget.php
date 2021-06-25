@@ -75,7 +75,8 @@ class SliderWidget {
             }
 
             if ($isEnabled) {
-                $widget = $group->getWidget($params->get('widget' . $groupName));
+                $widget = $group->getWidget ($params->get('widget' . $groupName));
+
                 if ($widget) {
                     $this->enabledWidgets[$groupName] = $widget->createFrontend($this, $params);
                 }
