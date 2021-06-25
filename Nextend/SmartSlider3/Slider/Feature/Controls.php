@@ -19,7 +19,6 @@ class Controls {
     public $blockCarouselInteraction = 1;
 
     public function __construct($slider) {
-
         $this->slider = $slider;
 
         $this->mousewheel = intval($slider->params->get('controlsScroll', 0));
