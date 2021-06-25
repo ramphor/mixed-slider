@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Ramphor\\SharpSlider\\' => array($baseDir . '/Ramphor/SharpSlider'),
-    'Nextend\\' => array($baseDir . '/Nextend'),
+    'Jankx\\Asset\\' => array($vendorDir . '/jankx/asset/src'),
 );

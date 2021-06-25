@@ -1,0 +1,47 @@
+{
+    "packages": [
+        {
+            "name": "jankx/asset",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jankx/asset.git",
+                "reference": "13b140b8387a37619ebea295ab67a6568857dbd6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jankx/asset/zipball/13b140b8387a37619ebea295ab67a6568857dbd6",
+                "reference": "13b140b8387a37619ebea295ab67a6568857dbd6",
+                "shasum": ""
+            },
+            "time": "2021-06-25T17:54:59+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "Jankx\\Asset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Puleeno Nguyen",
+                    "email": "puleeno@gmail.com"
+                }
+            ],
+            "description": "Jankx Assets is used to manage CSS, JS, libraries with beautiful syntax",
+            "support": {
+                "issues": "https://github.com/jankx/asset/issues",
+                "source": "https://github.com/jankx/asset/tree/master"
+            },
+            "install-path": "../jankx/asset"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
