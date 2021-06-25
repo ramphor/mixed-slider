@@ -26,7 +26,6 @@ class SmartSlider3 {
     use SingletonTrait, GetAssetsPathTrait;
 
     protected function init() {
-
         Platform::getInstance();
         SmartSlider3Platform::getInstance();
 

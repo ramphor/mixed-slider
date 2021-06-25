@@ -6,7 +6,7 @@ use Nextend\SmartSlider3\SmartSlider3Info;
 add_action('plugins_loaded', 'smart_slider_3_plugins_loaded', 30);
 
 function smart_slider_3_plugins_loaded() {
-
+    define('SHARP_SLIDER_ROOT_DIR', dirname(SHARP_SLIDER_PLUGIN_FILE));
     define('NEXTEND_SMARTSLIDER_3', dirname(__FILE__) . DIRECTORY_SEPARATOR);
     define('NEXTEND_SMARTSLIDER_3_BASENAME', NEXTEND_SMARTSLIDER_3_FREE_BASENAME);
     define('NEXTEND_SMARTSLIDER_3_SLUG', NEXTEND_SMARTSLIDER_3_FREE_SLUG);

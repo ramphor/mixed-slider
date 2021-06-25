@@ -12,6 +12,10 @@ License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
  */
 
+if (!defined('SHARP_SLIDER_PLUGIN_FILE')) {
+    define('SHARP_SLIDER_PLUGIN_FILE', __FILE__);
+}
+
 if (!defined('SMARTSLIDER3_LIBRARY_PATH')) {
     define('SMARTSLIDER3_LIBRARY_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Nextend');
 }

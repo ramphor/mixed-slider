@@ -11,7 +11,8 @@ use Ramphor\SharpSlider\Widget\TextTab\AbstractTextTabFrontend;
 
 class TextTabTransitionFrontend extends AbstractTextTabFrontend
 {
-    public function render($attributes = array()) {
+    public function render($attributes = array())
+    {
 
         $slider = $this->slider;
         $id     = $this->slider->elementId;
@@ -21,7 +22,7 @@ class TextTabTransitionFrontend extends AbstractTextTabFrontend
             return '';
         }
 
-        $slider->addLess(self::getAssetsPath() . '/style.n2less', array(
+        $slider->addLess(static::getAssetsPathV4('widget/text-tab/style.n2less'), array(
             "sliderid" => $slider->elementId
         ));
 
@@ -43,7 +44,6 @@ class TextTabTransitionFrontend extends AbstractTextTabFrontend
         );
 
         if ($params->get($this->key . 'thumbnail-show-image')) {
-
             $parameters['thumbnail']       = 1;
             $parameters['thumbnailWidth']  = intval($params->get($this->key . 'thumbnail-width'));
             $parameters['thumbnailHeight'] = intval($params->get($this->key . 'thumbnail-height'));

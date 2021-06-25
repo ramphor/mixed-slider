@@ -3,11 +3,12 @@ namespace Ramphor\SharpSlider\Widget\TextTab;
 
 use Nextend\Framework\Platform\Platform;
 use Nextend\Framework\Url\Url;
-use Nextend\SmartSlider3\Widget\AbstractWidgetFrontend;
+use Ramphor\SharpSlider\Widget\AbstractWidgetFrontend;
 
 abstract class AbstractTextTabFrontend extends AbstractWidgetFrontend
 {
-    public function __construct($sliderWidget, $widget, $params) {
+    public function __construct($sliderWidget, $widget, $params)
+    {
 
         parent::__construct($sliderWidget, $widget, $params);
 
@@ -22,11 +23,13 @@ abstract class AbstractTextTabFrontend extends AbstractWidgetFrontend
     }
 
 
-    public function getCommonAssetsUri() {
+    public function getCommonAssetsUri()
+    {
         return Url::pathToUri($this->getCommonAssetsPath());
     }
 
-    public function getCommonAssetsPath() {
+    public function getCommonAssetsPath()
+    {
 
         return Platform::filterAssetsPath(dirname(__FILE__) . '/Assets');
     }
