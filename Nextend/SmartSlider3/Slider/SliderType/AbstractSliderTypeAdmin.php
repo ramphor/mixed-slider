@@ -1,6 +1,4 @@
 <?php
-
-
 namespace Nextend\SmartSlider3\Slider\SliderType;
 
 

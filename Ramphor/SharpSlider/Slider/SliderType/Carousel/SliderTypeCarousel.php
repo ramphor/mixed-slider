@@ -10,6 +10,7 @@ class SliderTypeCarousel
 
     public function createAdmin()
     {
+        return new SliderTypeCarouselAdmin($this);
     }
 
     public function createCss($slider)
