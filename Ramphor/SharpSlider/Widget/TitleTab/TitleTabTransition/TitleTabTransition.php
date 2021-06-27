@@ -41,7 +41,8 @@ class TitleTabTransition extends AbstractWidget
         'widget-titletab-show-image'        => 1,
         'widget-titletab-width'             => 100,
         'widget-titletab-height'            => 60,
-        'widget-titletab-align-content'     => 'start'
+        'widget-titletab-align-content'     => 'start',
+        'widget-titletab-show-nextprev'     => 0
     );
 
 
@@ -56,7 +57,7 @@ class TitleTabTransition extends AbstractWidget
             'preview' => 'SmartSliderAdminWidgetTitleTab'
         ));
 
-        new Font($rowCaption, 'widget-titletab-title-font', '', '', array(
+        new Font($rowCaption, 'widget-titletab-title-font', n2_('Title Font'), '', array(
             'mode'    => 'simple',
             'style'   => 'sliderwidget-titletab-title-style',
             'preview' => 'SmartSliderAdminWidgetTitleTab'
@@ -72,6 +73,8 @@ class TitleTabTransition extends AbstractWidget
             'style'   => 'sliderwidget-titletab-title-style',
             'preview' => 'SmartSliderAdminWidgetTitleTab'
         ));
+
+        new OnOff($rowCaption, 'widget-titletab-show-nextprev', n2_('Show Next/Prev'), '');
 
         new Number($rowCaption, 'widget-titletab-caption-size', n2_('Size'), '', array(
             'wide'           => 5,

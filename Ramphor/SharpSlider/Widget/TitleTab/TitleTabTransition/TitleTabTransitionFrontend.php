@@ -58,12 +58,8 @@ class TitleTabTransitionFrontend extends AbstractWidgetFrontend
         $width  = intval($slider->params->get($this->key . 'width', 100));
         $height = intval($slider->params->get($this->key . 'height', 60));
 
-        $css = '';
-        if ($showThumbnail) {
-            $css .= 'div#' . $this->slider->elementId . ' .n2-thumbnail-dot img{width:' . $width . 'px;height:' . $height . 'px}';
-        } else {
-            $css .= 'div#' . $this->slider->elementId . ' .n2-thumbnail-dot{min-width:' . $width . 'px;min-height:' . $height . 'px}';
-        }
+        $css = $css .= 'div#' . $this->slider->elementId . ' .n2-thumbnail-dot{min-width:' . $width . 'px;min-height:' . $height . 'px}';
+
         if (!empty($css)) {
             $this->slider->addDeviceCSS('all', $css);
         }
@@ -72,12 +68,7 @@ class TitleTabTransitionFrontend extends AbstractWidgetFrontend
         $tabletHeight = intval($slider->params->get($this->key . 'tablet-height', $height));
 
         if ($tabletWidth !== $width || $tabletHeight !== $height) {
-            $css = '';
-            if ($showThumbnail) {
-                $css .= 'div#' . $this->slider->elementId . ' .n2-thumbnail-dot img{width:' . $tabletWidth . 'px;height:' . $tabletHeight . 'px}';
-            } else {
-                $css .= 'div#' . $this->slider->elementId . ' .n2-thumbnail-dot{min-width:' . $tabletWidth . 'px;min-height:' . $tabletHeight . 'px}';
-            }
+            $css = 'div#' . $this->slider->elementId . ' .n2-thumbnail-dot{min-width:' . $tabletWidth . 'px;min-height:' . $tabletHeight . 'px}';
             if (!empty($css)) {
                 $this->slider->addDeviceCSS('tabletportrait', $css);
                 $this->slider->addDeviceCSS('tabletlandscape', $css);
@@ -87,21 +78,14 @@ class TitleTabTransitionFrontend extends AbstractWidgetFrontend
         $mobileWidth  = intval($slider->params->get($this->key . 'mobile-width', $width));
         $mobileHeight = intval($slider->params->get($this->key . 'mobile-height', $height));
         if ($mobileWidth !== $width || $mobileHeight !== $height) {
-            $css = '';
-            if ($showThumbnail) {
-                $css .= 'div#' . $this->slider->elementId . ' .n2-thumbnail-dot img{width:' . $mobileWidth . 'px;height:' . $mobileHeight . 'px}';
-            } else {
-                $css .= 'div#' . $this->slider->elementId . ' .n2-thumbnail-dot{min-width:' . $mobileWidth . 'px;min-height:' . $mobileHeight . 'px}';
-            }
+            $css = 'div#' . $this->slider->elementId . ' .n2-thumbnail-dot{min-width:' . $mobileWidth . 'px;min-height:' . $mobileHeight . 'px}';
             if (!empty($css)) {
                 $this->slider->addDeviceCSS('mobileportrait', $css);
                 $this->slider->addDeviceCSS('mobilelandscape', $css);
             }
         }
 
-
         $captionSize = intval($slider->params->get($this->key . 'caption-size', 100));
-
 
         $orientation = $params->get($this->key . 'orientation');
         $orientation = $this->getOrientationByPosition($params->get($this->key . 'position-mode'), $params->get($this->key . 'position-area'), $orientation, 'vertical');
@@ -182,18 +166,20 @@ class TitleTabTransitionFrontend extends AbstractWidgetFrontend
                 FastImageSize::initAttributes(ResourceTranslator::urlToResource($arrowImageNext), $nextSizeAttributes);
             }
 
-            $previous = Html::tag('div', array(
-                'class' => 'nextend-thumbnail-button nextend-thumbnail-previous'
-            ), Html::image($arrowImagePrevious, $slider->params->get($this->key . 'arrow-prev-alt', 'previous arrow'), $previousSizeAttributes + Html::addExcludeLazyLoadAttributes(array(
-                    'style'   => $previousStyle,
-                    'loading' => 'lazy'
-                ))));
-            $next     = Html::tag('div', array(
-                'class' => 'nextend-thumbnail-button nextend-thumbnail-next'
-            ), Html::image($arrowImageNext, $slider->params->get($this->key . 'arrow-next-alt', 'next arrow'), $nextSizeAttributes + Html::addExcludeLazyLoadAttributes(array(
-                    'style'   => $nextStyle,
-                    'loading' => 'lazy'
-                ))));
+            if ($params->get($this->key . 'show-nextprev')) {
+                $previous = Html::tag('div', array(
+                    'class' => 'nextend-thumbnail-button nextend-thumbnail-previous'
+                ), Html::image($arrowImagePrevious, $slider->params->get($this->key . 'arrow-prev-alt', 'previous arrow'), $previousSizeAttributes + Html::addExcludeLazyLoadAttributes(array(
+                        'style'   => $previousStyle,
+                        'loading' => 'lazy'
+                    ))));
+                $next     = Html::tag('div', array(
+                    'class' => 'nextend-thumbnail-button nextend-thumbnail-next'
+                ), Html::image($arrowImageNext, $slider->params->get($this->key . 'arrow-next-alt', 'next arrow'), $nextSizeAttributes + Html::addExcludeLazyLoadAttributes(array(
+                        'style'   => $nextStyle,
+                        'loading' => 'lazy'
+                    ))));
+            }
         }
 
         $captionStyle = '';
@@ -201,10 +187,7 @@ class TitleTabTransitionFrontend extends AbstractWidgetFrontend
             $captionStyle = $slider->addStyle($params->get($this->key . 'title-style'), 'simple');
         }
 
-        $titleFont = '';
-        if ($showTitle) {
-            $titleFont = $slider->addFont($params->get($this->key . 'title-font'), 'simple');
-        }
+        $titleFont = $slider->addFont($params->get($this->key . 'title-font'), 'simple');
 
         $descriptionFont = '';
         if ($showDescription) {
