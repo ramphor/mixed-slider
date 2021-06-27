@@ -254,7 +254,7 @@ class TitleTabTransitionFrontend extends AbstractWidgetFrontend
         )), Html::tag('div', array(
                 'class' => 'nextend-thumbnail-inner ' . $barStyle
             ), Html::tag('div', array(
-                'class' => 'nextend-thumbnail-scroller n2-align-content-' . $params->get('widget-thumbnail-align-content'),
+                'class' => 'nextend-thumbnail-scroller n2-align-content-' . $params->get('widget-titletab-align-content'),
                 'style' => $scrollerStyle
             ), implode('', $dots))) . $previous . $next);
     }

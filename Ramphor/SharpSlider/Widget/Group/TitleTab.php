@@ -51,7 +51,7 @@ class TitleTab extends AbstractWidgetGroup
         /**
          * Used for field removal: /controls/widget-titletab
          */
-        $table = new ContainerTable($container, 'widget-titletab', n2_('Thumbnails'));
+        $table = new ContainerTable($container, 'widget-titletab', n2_('Title Tabs'));
 
         new OnOff($table->getFieldsetLabel(), 'widget-titletab-enabled', false, 0, array(
             'relatedFieldsOn' => array(
@@ -135,9 +135,6 @@ class TitleTab extends AbstractWidgetGroup
 
 
         $row3 = $table->createRow('widget-titletab-3');
-
-        new OnOff($row3, 'widget-titletab-display-hover', n2_('Shows on hover'), 0);
-
         $this->addHideOnFeature('widget-titletab-display-', $row3);
     }
 }

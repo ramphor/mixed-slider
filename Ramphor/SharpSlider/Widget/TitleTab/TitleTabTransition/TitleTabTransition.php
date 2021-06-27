@@ -11,102 +11,69 @@ use Nextend\Framework\Form\Element\Text;
 use Nextend\Framework\Form\Element\Text\FieldImage;
 use Nextend\Framework\Form\Element\Text\Number;
 use Nextend\Framework\Form\Fieldset\FieldsetRow;
-use Nextend\SmartSlider3\Form\Element\Group\WidgetPosition;
 use Ramphor\SharpSlider\Widget\AbstractWidget;
 
 class TitleTabTransition extends AbstractWidget
 {
 
-    protected $key = 'widget-thumbnail-';
+    protected $key = 'widget-titletab-';
 
     protected $defaults = array(
-        'widget-thumbnail-position-mode'     => 'simple',
-        'widget-thumbnail-position-area'     => 12,
-        'widget-thumbnail-action'            => 'click',
-        'widget-thumbnail-style-bar'         => '{"data":[{"backgroundcolor":"242424ff","padding":"3|*|3|*|3|*|3|*|px","boxshadow":"0|*|0|*|0|*|0|*|000000ff","border":"0|*|solid|*|000000ff","borderradius":"0","extra":""}]}',
-        'widget-thumbnail-style-slides'      => '{"data":[{"backgroundcolor":"00000000","padding":"0|*|0|*|0|*|0|*|px","boxshadow":"0|*|0|*|0|*|0|*|000000ff","border":"0|*|solid|*|ffffff00","borderradius":"0","opacity":"40","extra":"margin: 3px;\ntransition: all 0.4s;"},{"border":"0|*|solid|*|ffffffcc","opacity":"100","extra":""}]}',
-        'widget-thumbnail-arrow'             => 1,
-        'widget-thumbnail-arrow-image'       => '',
-        'widget-thumbnail-arrow-width'       => 26,
-        'widget-thumbnail-arrow-offset'      => 0,
-        'widget-thumbnail-arrow-prev-alt'    => 'previous arrow',
-        'widget-thumbnail-arrow-next-alt'    => 'next arrow',
-        'widget-thumbnail-title-style'       => '{"data":[{"backgroundcolor":"000000ab","padding":"3|*|10|*|3|*|10|*|px","boxshadow":"0|*|0|*|0|*|0|*|000000ff","border":"0|*|solid|*|000000ff","borderradius":"0","extra":"bottom: 0;\nleft: 0;"}]}',
-        'widget-thumbnail-title'             => 0,
-        'widget-thumbnail-title-font'        => '{"data":[{"color":"ffffffff","size":"12||px","tshadow":"0|*|0|*|0|*|000000ab","afont":"Montserrat","lineheight":"1.2","bold":0,"italic":0,"underline":0,"align":"left"},{"color":"fc2828ff","afont":"Raleway,Arial","size":"25||px"},{}]}',
-        'widget-thumbnail-description'       => 0,
-        'widget-thumbnail-description-font'  => '{"data":[{"color":"ffffffff","size":"12||px","tshadow":"0|*|0|*|0|*|000000ab","afont":"Montserrat","lineheight":"1.3","bold":0,"italic":0,"underline":0,"align":"left"},{"color":"fc2828ff","afont":"Raleway,Arial","size":"25||px"},{}]}',
-        'widget-thumbnail-caption-size'      => 100,
-        'widget-thumbnail-group'             => 1,
-        'widget-thumbnail-orientation'       => 'auto',
-        'widget-thumbnail-size'              => '100%',
-        'widget-thumbnail-show-image'        => 1,
-        'widget-thumbnail-width'             => 100,
-        'widget-thumbnail-height'            => 60,
-        'widget-thumbnail-align-content'     => 'start'
+        'widget-titletab-position-mode'     => 'simple',
+        'widget-titletab-position-area'     => 12,
+        'widget-titletab-action'            => 'click',
+        'widget-titletab-style-bar'         => '{"data":[{"backgroundcolor":"242424ff","padding":"3|*|3|*|3|*|3|*|px","boxshadow":"0|*|0|*|0|*|0|*|000000ff","border":"0|*|solid|*|000000ff","borderradius":"0","extra":""}]}',
+        'widget-titletab-style-slides'      => '{"data":[{"backgroundcolor":"00000000","padding":"0|*|0|*|0|*|0|*|px","boxshadow":"0|*|0|*|0|*|0|*|000000ff","border":"0|*|solid|*|ffffff00","borderradius":"0","opacity":"40","extra":"margin: 3px;\ntransition: all 0.4s;"},{"border":"0|*|solid|*|ffffffcc","opacity":"100","extra":""}]}',
+        'widget-titletab-arrow'             => 1,
+        'widget-titletab-arrow-image'       => '',
+        'widget-titletab-arrow-width'       => 26,
+        'widget-titletab-arrow-offset'      => 0,
+        'widget-titletab-arrow-prev-alt'    => 'previous arrow',
+        'widget-titletab-arrow-next-alt'    => 'next arrow',
+        'widget-titletab-title-style'       => '{"data":[{"backgroundcolor":"000000ab","padding":"3|*|10|*|3|*|10|*|px","boxshadow":"0|*|0|*|0|*|0|*|000000ff","border":"0|*|solid|*|000000ff","borderradius":"0","extra":"bottom: 0;\nleft: 0;"}]}',
+        'widget-titletab-title-font'        => '{"data":[{"color":"ffffffff","size":"12||px","tshadow":"0|*|0|*|0|*|000000ab","afont":"Montserrat","lineheight":"1.2","bold":0,"italic":0,"underline":0,"align":"left"},{"color":"fc2828ff","afont":"Raleway,Arial","size":"25||px"},{}]}',
+        'widget-titletab-description'       => 0,
+        'widget-titletab-description-font'  => '{"data":[{"color":"ffffffff","size":"12||px","tshadow":"0|*|0|*|0|*|000000ab","afont":"Montserrat","lineheight":"1.3","bold":0,"italic":0,"underline":0,"align":"left"},{"color":"fc2828ff","afont":"Raleway,Arial","size":"25||px"},{}]}',
+        'widget-titletab-caption-size'      => 100,
+        'widget-titletab-group'             => 1,
+        'widget-titletab-orientation'       => 'auto',
+        'widget-titletab-size'              => '100%',
+        'widget-titletab-show-image'        => 1,
+        'widget-titletab-width'             => 100,
+        'widget-titletab-height'            => 60,
+        'widget-titletab-align-content'     => 'start'
     );
 
 
     public function renderFields($container)
     {
 
-        $row1 = new FieldsetRow($container, 'widget-thumbnail-default-row-1');
-
-        new WidgetPosition($row1, 'widget-thumbnail-position', n2_('Position'));
-
-        new Select($row1, 'widget-thumbnail-align-content', n2_('Align thumbnails'), '', array(
-            'options' => array(
-                'start'         => n2_('Start'),
-                'center'        => n2_('Center'),
-                'end'           => n2_('End'),
-                'space-between' => n2_('Space between'),
-                'space-around'  => n2_('Space around')
-            )
-        ));
-
-        new Style($row1, 'widget-thumbnail-style-bar', n2_('Bar'), '', array(
-            'mode'    => 'simple',
-            'style2'  => 'sliderwidget-thumbnail-style-slides',
-            'preview' => 'SmartSliderAdminWidgetTitleTab'
-        ));
-
-        new Style($row1, 'widget-thumbnail-style-slides', n2_('Thumbnail'), '', array(
-            'mode'    => 'dot',
-            'style2'  => 'sliderwidget-thumbnail-style-bar',
-            'preview' => 'SmartSliderAdminWidgetTitleTab'
-        ));
-
-        $rowCaption = new FieldsetRow($container, 'widget-thumbnail-default-row-caption');
-        new Style($rowCaption, 'widget-thumbnail-title-style', n2_('Caption'), '', array(
+        $rowCaption = new FieldsetRow($container, 'widget-titletab-default-row-caption');
+        new Style($rowCaption, 'widget-titletab-title-style', n2_('Caption'), '', array(
             'mode'    => 'simple',
             'post'    => 'break',
-            'font'    => 'sliderwidget-thumbnail-title-font',
+            'font'    => 'sliderwidget-titletab-title-font',
             'preview' => 'SmartSliderAdminWidgetTitleTab'
         ));
 
-        new OnOff($rowCaption, 'widget-thumbnail-title', n2_('Title'), '', array(
+        new Font($rowCaption, 'widget-titletab-title-font', '', '', array(
+            'mode'    => 'simple',
+            'style'   => 'sliderwidget-titletab-title-style',
+            'preview' => 'SmartSliderAdminWidgetTitleTab'
+        ));
+
+        new OnOff($rowCaption, 'widget-titletab-description', n2_('Description'), '', array(
             'relatedFieldsOn' => array(
-                'sliderwidget-thumbnail-title-font'
+                'sliderwidget-titletab-description-font'
             )
         ));
-        new Font($rowCaption, 'widget-thumbnail-title-font', '', '', array(
+        new Font($rowCaption, 'widget-titletab-description-font', '', '', array(
             'mode'    => 'simple',
-            'style'   => 'sliderwidget-thumbnail-title-style',
+            'style'   => 'sliderwidget-titletab-title-style',
             'preview' => 'SmartSliderAdminWidgetTitleTab'
         ));
 
-        new OnOff($rowCaption, 'widget-thumbnail-description', n2_('Description'), '', array(
-            'relatedFieldsOn' => array(
-                'sliderwidget-thumbnail-description-font'
-            )
-        ));
-        new Font($rowCaption, 'widget-thumbnail-description-font', '', '', array(
-            'mode'    => 'simple',
-            'style'   => 'sliderwidget-thumbnail-title-style',
-            'preview' => 'SmartSliderAdminWidgetTitleTab'
-        ));
-
-        new Number($rowCaption, 'widget-thumbnail-caption-size', n2_('Size'), '', array(
+        new Number($rowCaption, 'widget-titletab-caption-size', n2_('Size'), '', array(
             'wide'           => 5,
             'unit'           => 'px',
             'tipLabel'       => n2_('Size'),
