@@ -12,7 +12,7 @@ use Nextend\SmartSlider3\Widget\Group\Bullet;
 use Nextend\SmartSlider3\Widget\Group\Shadow;
 use Nextend\SmartSlider3\Widget\Group\Thumbnail;
 
-use Ramphor\SharpSlider\Widget\Group\TextTab;
+use Ramphor\SharpSlider\Widget\Group\TitleTab;
 
 class WidgetGroupFactory {
 
@@ -29,8 +29,7 @@ class WidgetGroupFactory {
         new Shadow();
         new Thumbnail();
 
-        // The features develop by Ramphor Premium
-        new TextTab();
+        new TitleTab();
 
         $this->makePluggable('SliderWidgetGroup');
     }
