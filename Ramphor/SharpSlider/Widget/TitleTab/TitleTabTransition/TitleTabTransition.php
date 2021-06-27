@@ -48,6 +48,17 @@ class TitleTabTransition extends AbstractWidget
 
     public function renderFields($container)
     {
+        $row1 = new FieldsetRow($container, 'widget-titletab-default-row-1');
+
+        new Select($row1, 'widget-titletab-align-content', n2_('Align titles'), '', array(
+            'options' => array(
+                'start'         => n2_('Start'),
+                'center'        => n2_('Center'),
+                'end'           => n2_('End'),
+                'space-between' => n2_('Space between'),
+                'space-around'  => n2_('Space around')
+            )
+        ));
 
         $rowCaption = new FieldsetRow($container, 'widget-titletab-default-row-caption');
         new Style($rowCaption, 'widget-titletab-title-style', n2_('Caption'), '', array(
@@ -68,6 +79,7 @@ class TitleTabTransition extends AbstractWidget
                 'sliderwidget-titletab-description-font'
             )
         ));
+
         new Font($rowCaption, 'widget-titletab-description-font', '', '', array(
             'mode'    => 'simple',
             'style'   => 'sliderwidget-titletab-title-style',
@@ -98,7 +110,6 @@ class TitleTabTransition extends AbstractWidget
 
     public function prepareImport($import, $params)
     {
-
         $params->set($this->key . 'style-bar', $import->fixSection($params->get($this->key . 'style-bar', '')));
         $params->set($this->key . 'style-slides', $import->fixSection($params->get($this->key . 'style-slides', '')));
         $params->set($this->key . 'title-style', $import->fixSection($params->get($this->key . 'title-style', '')));
