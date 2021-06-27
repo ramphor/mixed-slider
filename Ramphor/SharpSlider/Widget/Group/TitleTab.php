@@ -12,13 +12,15 @@ use Nextend\SmartSlider3\Widget\Group\AbstractWidgetGroup;
 
 use Ramphor\SharpSlider\Widget\TitleTab\TitleTabTransition\TitleTabTransition;
 
-class TitleTab extends AbstractWidgetGroup {
+class TitleTab extends AbstractWidgetGroup
+{
 
     use PluggableTrait;
 
     public $ordering = 6;
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
 
         new TitleTabTransition($this, 'titletab');
@@ -26,18 +28,21 @@ class TitleTab extends AbstractWidgetGroup {
         $this->makePluggable('SliderWidgetTitleTab');
     }
 
-    public function getName() {
+    public function getName()
+    {
         return 'titletab';
     }
 
-    public function getLabel() {
+    public function getLabel()
+    {
         return n2_('Title Tabs');
     }
 
     /**
      * @param ContainerTab $container
      */
-    public function renderFields($container) {
+    public function renderFields($container)
+    {
 
         $form = $container->getForm();
 

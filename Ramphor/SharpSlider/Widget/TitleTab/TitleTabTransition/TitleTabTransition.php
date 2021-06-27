@@ -3,7 +3,6 @@
 
 namespace Ramphor\SharpSlider\Widget\TitleTab\TitleTabTransition;
 
-
 use Nextend\Framework\Form\Element\Font;
 use Nextend\Framework\Form\Element\OnOff;
 use Nextend\Framework\Form\Element\Select;
@@ -15,7 +14,8 @@ use Nextend\Framework\Form\Fieldset\FieldsetRow;
 use Nextend\SmartSlider3\Form\Element\Group\WidgetPosition;
 use Ramphor\SharpSlider\Widget\AbstractWidget;
 
-class TitleTabTransition extends AbstractWidget {
+class TitleTabTransition extends AbstractWidget
+{
 
     protected $key = 'widget-thumbnail-';
 
@@ -36,7 +36,6 @@ class TitleTabTransition extends AbstractWidget {
         'widget-thumbnail-title-font'        => '{"data":[{"color":"ffffffff","size":"12||px","tshadow":"0|*|0|*|0|*|000000ab","afont":"Montserrat","lineheight":"1.2","bold":0,"italic":0,"underline":0,"align":"left"},{"color":"fc2828ff","afont":"Raleway,Arial","size":"25||px"},{}]}',
         'widget-thumbnail-description'       => 0,
         'widget-thumbnail-description-font'  => '{"data":[{"color":"ffffffff","size":"12||px","tshadow":"0|*|0|*|0|*|000000ab","afont":"Montserrat","lineheight":"1.3","bold":0,"italic":0,"underline":0,"align":"left"},{"color":"fc2828ff","afont":"Raleway,Arial","size":"25||px"},{}]}',
-        'widget-thumbnail-caption-placement' => 'overlay',
         'widget-thumbnail-caption-size'      => 100,
         'widget-thumbnail-group'             => 1,
         'widget-thumbnail-orientation'       => 'auto',
@@ -48,7 +47,8 @@ class TitleTabTransition extends AbstractWidget {
     );
 
 
-    public function renderFields($container) {
+    public function renderFields($container)
+    {
 
         $row1 = new FieldsetRow($container, 'widget-thumbnail-default-row-1');
 
@@ -106,15 +106,6 @@ class TitleTabTransition extends AbstractWidget {
             'preview' => 'SmartSliderAdminWidgetTitleTab'
         ));
 
-
-        new Select($rowCaption, 'widget-thumbnail-caption-placement', n2_('Placement'), '', array(
-            'options' => array(
-                'before'  => n2_('Before'),
-                'overlay' => n2_('Overlay'),
-                'after'   => n2_('After')
-            )
-        ));
-
         new Number($rowCaption, 'widget-thumbnail-caption-size', n2_('Size'), '', array(
             'wide'           => 5,
             'unit'           => 'px',
@@ -124,7 +115,8 @@ class TitleTabTransition extends AbstractWidget {
     }
 
 
-    public function prepareExport($export, $params) {
+    public function prepareExport($export, $params)
+    {
 
         $export->addVisual($params->get($this->key . 'style-bar'));
         $export->addVisual($params->get($this->key . 'style-slides'));
@@ -134,7 +126,8 @@ class TitleTabTransition extends AbstractWidget {
         $export->addVisual($params->get($this->key . 'description-font'));
     }
 
-    public function prepareImport($import, $params) {
+    public function prepareImport($import, $params)
+    {
 
         $params->set($this->key . 'style-bar', $import->fixSection($params->get($this->key . 'style-bar', '')));
         $params->set($this->key . 'style-slides', $import->fixSection($params->get($this->key . 'style-slides', '')));

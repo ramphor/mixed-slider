@@ -3,7 +3,6 @@
 
 namespace Ramphor\SharpSlider\Widget\TitleTab\TitleTabTransition;
 
-
 use Nextend\Framework\Asset\Js\Js;
 use Nextend\Framework\FastImageSize\FastImageSize;
 use Nextend\Framework\Filesystem\Filesystem;
@@ -12,13 +11,15 @@ use Nextend\Framework\ResourceTranslator\ResourceTranslator;
 use Nextend\Framework\View\Html;
 use Ramphor\SharpSlider\Widget\AbstractWidgetFrontend;
 
-class TitleTabTransitionFrontend extends AbstractWidgetFrontend {
+class TitleTabTransitionFrontend extends AbstractWidgetFrontend
+{
 
     private static $thumbnailTypes = array(
         'videoDark' => '<svg class="n2-thumbnail-dot-type" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="#000" opacity=".6"/><path fill="#FFF" d="M19.8 32c-.124 0-.247-.028-.36-.08-.264-.116-.436-.375-.44-.664V16.744c.005-.29.176-.55.44-.666.273-.126.592-.1.84.07l10.4 7.257c.2.132.32.355.32.595s-.12.463-.32.595l-10.4 7.256c-.14.1-.31.15-.48.15z"/></svg>'
     );
 
-    public function __construct($sliderWidget, $widget, $params) {
+    public function __construct($sliderWidget, $widget, $params)
+    {
 
         parent::__construct($sliderWidget, $widget, $params);
 
@@ -28,7 +29,8 @@ class TitleTabTransitionFrontend extends AbstractWidgetFrontend {
         ));
     }
 
-    public function render($attributes = array()) {
+    public function render($attributes = array())
+    {
 
         $slider = $this->slider;
         $id     = $this->slider->elementId;
@@ -70,7 +72,6 @@ class TitleTabTransitionFrontend extends AbstractWidgetFrontend {
         $tabletHeight = intval($slider->params->get($this->key . 'tablet-height', $height));
 
         if ($tabletWidth !== $width || $tabletHeight !== $height) {
-
             $css = '';
             if ($showThumbnail) {
                 $css .= 'div#' . $this->slider->elementId . ' .n2-thumbnail-dot img{width:' . $tabletWidth . 'px;height:' . $tabletHeight . 'px}';
@@ -86,7 +87,6 @@ class TitleTabTransitionFrontend extends AbstractWidgetFrontend {
         $mobileWidth  = intval($slider->params->get($this->key . 'mobile-width', $width));
         $mobileHeight = intval($slider->params->get($this->key . 'mobile-height', $height));
         if ($mobileWidth !== $width || $mobileHeight !== $height) {
-
             $css = '';
             if ($showThumbnail) {
                 $css .= 'div#' . $this->slider->elementId . ' .n2-thumbnail-dot img{width:' . $mobileWidth . 'px;height:' . $mobileHeight . 'px}';
@@ -100,44 +100,20 @@ class TitleTabTransitionFrontend extends AbstractWidgetFrontend {
         }
 
 
-        $captionPlacement = $slider->params->get($this->key . 'caption-placement', 'overlay');
-        if (!$showThumbnail) {
-            $captionPlacement = 'before';
-        }
-
-        if (!$showTitle && !$showDescription) {
-            $captionPlacement = 'overlay';
-        }
-
         $captionSize = intval($slider->params->get($this->key . 'caption-size', 100));
 
 
         $orientation = $params->get($this->key . 'orientation');
         $orientation = $this->getOrientationByPosition($params->get($this->key . 'position-mode'), $params->get($this->key . 'position-area'), $orientation, 'vertical');
 
-        $captionExtraStyle = '';
-        switch ($captionPlacement) {
-            case 'before':
-            case 'after':
-                switch ($orientation) {
-                    case 'vertical':
-                        $captionExtraStyle .= "width: " . $captionSize . "px";
-                        break;
-                    default:
-                        $captionExtraStyle .= "height: " . $captionSize . "px";
-                }
-                break;
-        }
-
+        $captionExtraStyle .= "width: " . $captionSize . "px";
 
         if ($orientation == 'vertical') {
-
             Js::addStaticGroup(self::getAssetsPath() . '/dist/w-thumbnail-vertical.min.js', 'w-thumbnail-vertical');
 
             $slider->features->addInitCallback('new _N2.SmartSliderWidgetThumbnailDefaultVertical(this, ' . json_encode($parameters) . ');');
             $slider->sliderType->addJSDependency('SmartSliderWidgetThumbnailDefaultVertical');
         } else {
-
             Js::addStaticGroup(self::getAssetsPath() . '/dist/w-thumbnail-horizontal.min.js', 'w-thumbnail-horizontal');
 
             $slider->features->addInitCallback('new _N2.SmartSliderWidgetThumbnailDefaultHorizontal(this, ' . json_encode($parameters) . ');');
@@ -238,45 +214,24 @@ class TitleTabTransitionFrontend extends AbstractWidgetFrontend {
         $dots   = array();
         $slides = $slider->getSlides();
         foreach ($slides as $slide) {
-
             $dotHTML = array();
 
-            if ($showThumbnail) {
+            $captionHTML = '';
+            $title = $slide->getTitle();
+            if (!empty($title)) {
+                $captionHTML .= '<div class="' . $titleFont . '">' . $title . '</div>';
+            }
 
-                $dotHTML[] = $slide->renderThumbnailImage($width, $height, array(
-                    'alt' => $slide->getThumbnailAltDynamic()
-                ));
-
-                $thumbnailType = $slide->getThumbnailType();
-                if (isset(self::$thumbnailTypes[$thumbnailType])) {
-                    $dotHTML[] = self::$thumbnailTypes[$thumbnailType];
+            if ($showDescription) {
+                $description = $slide->getDescription();
+                if (!empty($description)) {
+                    $captionHTML .= '<div class="' . $descriptionFont . '">' . $description . '</div>';
                 }
             }
 
-            if ($showTitle || $showDescription) {
-                $captionHTML = '';
-                if ($showTitle) {
-                    $title = $slide->getTitle();
-                    if (!empty($title)) {
-                        $captionHTML .= '<div class="' . $titleFont . '">' . $title . '</div>';
-                    }
-                }
-
-                if ($showDescription) {
-                    $description = $slide->getDescription();
-                    if (!empty($description)) {
-                        $captionHTML .= '<div class="' . $descriptionFont . '">' . $description . '</div>';
-                    }
-                }
-
-                if (!empty($captionHTML)) {
-                    $dotHTML[] = Html::tag('div', array(
-                        'class' => $captionStyle . ' n2-ss-caption n2-ow n2-caption-' . $captionPlacement,
-                        'style' => $captionExtraStyle
-                    ), $captionHTML);
-                }
+            if (!empty($captionHTML)) {
+                $dotHTML[] = $captionHTML;
             }
-
 
             $dots[] = Html::tag('div', $slide->showOnAttributes + array(
                     'class'                => 'n2-thumbnail-dot ' . $slideStyle,
@@ -304,11 +259,12 @@ class TitleTabTransitionFrontend extends AbstractWidgetFrontend {
             ), implode('', $dots))) . $previous . $next);
     }
 
-    protected function translateArea($area) {
+    protected function translateArea($area)
+    {
 
         if ($area == 5) {
             return 'left';
-        } else if ($area == 8) {
+        } elseif ($area == 8) {
             return 'right';
         }
 
