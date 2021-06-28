@@ -58,7 +58,7 @@ class TitleTabTransitionFrontend extends AbstractWidgetFrontend
         $width  = intval($slider->params->get($this->key . 'width', 100));
         $height = intval($slider->params->get($this->key . 'height', 60));
 
-        $css = $css .= 'div#' . $this->slider->elementId . ' .n2-thumbnail-dot{min-width:' . $width . 'px;min-height:' . $height . 'px}';
+        $css = 'div#' . $this->slider->elementId . ' .n2-thumbnail-dot{min-width:' . $width . 'px;min-height:' . $height . 'px}';
 
         if (!empty($css)) {
             $this->slider->addDeviceCSS('all', $css);
@@ -90,7 +90,7 @@ class TitleTabTransitionFrontend extends AbstractWidgetFrontend
         $orientation = $params->get($this->key . 'orientation');
         $orientation = $this->getOrientationByPosition($params->get($this->key . 'position-mode'), $params->get($this->key . 'position-area'), $orientation, 'vertical');
 
-        $captionExtraStyle .= "width: " . $captionSize . "px";
+        $captionExtraStyle = "width: " . $captionSize . "px";
 
         if ($orientation == 'vertical') {
             Js::addStaticGroup(self::getAssetsPath() . '/dist/w-thumbnail-vertical.min.js', 'w-thumbnail-vertical');
