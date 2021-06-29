@@ -18,9 +18,9 @@ class SmartSlider3Info {
 
     public static $channel = 'stable';
 
-    public static $revision = 'fe464aef2a63fc22d89068e10f723787c430a7c9';
+    public static $revision = 'f22b4d10d1be8ec131916dffef1d83bdf9be794b';
 
-    public static $revisionShort = 'fe464aef';
+    public static $revisionShort = 'f22b4d10';
 
     public static $branch = 'release-3.5.0.9';
 
