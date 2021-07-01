@@ -9,7 +9,7 @@ class SliderTypeCarouselFrontend extends AbstractSliderTypeFrontend
 
     public function renderType($css)
     {
-        $nextId = max(static::$instances) + 1;
+        $nextId = empty(static::$instances) ? 1 : max(static::$instances) + 1;
         array_push(static::$instances, $nextId);
 
         $sliderId = $this->slider->alias ? $this->slider->alias : "sharp_slider_{$this->slider->sliderId}";
