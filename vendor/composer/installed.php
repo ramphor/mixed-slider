@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '4e5d38409ad43d545fe4790f5776e521dec89633',
+    'reference' => '86e5d9ad707a930ae42c93e3498fc84492222a55',
     'name' => 'ramphor/sharp-slider',
   ),
   'versions' => 
@@ -19,7 +19,7 @@
       array (
         0 => '9999999-dev',
       ),
-      'reference' => '13b140b8387a37619ebea295ab67a6568857dbd6',
+      'reference' => '3451d2a85089dc37ffbe198adf73ee0fb3b782d0',
     ),
     'ramphor/sharp-slider' => 
     array (
@@ -28,7 +28,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '4e5d38409ad43d545fe4790f5776e521dec89633',
+      'reference' => '86e5d9ad707a930ae42c93e3498fc84492222a55',
     ),
   ),
 );

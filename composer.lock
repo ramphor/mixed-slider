@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jankx/asset.git",
-                "reference": "13b140b8387a37619ebea295ab67a6568857dbd6"
+                "reference": "3451d2a85089dc37ffbe198adf73ee0fb3b782d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jankx/asset/zipball/13b140b8387a37619ebea295ab67a6568857dbd6",
-                "reference": "13b140b8387a37619ebea295ab67a6568857dbd6",
+                "url": "https://api.github.com/repos/jankx/asset/zipball/3451d2a85089dc37ffbe198adf73ee0fb3b782d0",
+                "reference": "3451d2a85089dc37ffbe198adf73ee0fb3b782d0",
                 "shasum": ""
             },
             "default-branch": true,
@@ -42,7 +42,7 @@
                 "issues": "https://github.com/jankx/asset/issues",
                 "source": "https://github.com/jankx/asset/tree/master"
             },
-            "time": "2021-06-25T17:54:59+00:00"
+            "time": "2021-07-04T15:20:32+00:00"
         }
     ],
     "packages-dev": [],

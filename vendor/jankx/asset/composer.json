@@ -1,0 +1,19 @@
+{
+  "name": "jankx/asset",
+  "description": "Jankx Assets is used to manage CSS, JS, libraries with beautiful syntax",
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Puleeno Nguyen",
+      "email": "puleeno@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Jankx\\Asset\\": "src/"
+    }
+  }
+}
