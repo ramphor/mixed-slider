@@ -179,7 +179,7 @@ class Slider extends AbstractRenderable {
                 switch ($sliderRow['type']) {
                     case 'group':
                         throw new Exception(n2_('Groups are only available in the Pro version.'));
-                    
+
                         $this->isGroup = true;
                         break;
                 }
@@ -317,7 +317,7 @@ class Slider extends AbstractRenderable {
             if (class_exists('ElementorPro\Plugin', false)) {
                 $jsInlineMode = 'body';
             }
-        
+
             switch ($jsInlineMode) {
                 case 'body':
                     $slider .= Html::script($this->sliderType->getScript());
