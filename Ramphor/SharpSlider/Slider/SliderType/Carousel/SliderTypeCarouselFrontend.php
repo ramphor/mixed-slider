@@ -12,7 +12,7 @@ class SliderTypeCarouselFrontend extends AbstractSliderTypeFrontend
         $nextId = empty(static::$instances) ? 1 : max(static::$instances) + 1;
         array_push(static::$instances, $nextId);
 
-        $sliderId = $this->slider->alias ? $this->slider->alias : "sharp_slider_{$this->slider->sliderId}";
+        $sliderId = empty($this->slider->alias) ? "sharp_slider_{$this->slider->sliderId}" : $this->slider->alias;
         $slides = $this->slider->getSlides();
         ?>
         <div id="<?php echo $sliderId; ?>" class="splide">
