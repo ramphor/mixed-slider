@@ -202,7 +202,7 @@ class TitleTabTransitionFrontend extends AbstractWidgetFrontend
             $captionHTML = '';
             $title = $slide->getTitle();
             if (!empty($title)) {
-                $captionHTML .= '<div class="' . $titleFont . '">' . $title . '</div>';
+                $captionHTML .= '<div class="title-tab-inner ' . $titleFont . '">' . $title . '</div>';
             }
 
             if ($showDescription) {
@@ -217,7 +217,7 @@ class TitleTabTransitionFrontend extends AbstractWidgetFrontend
             }
 
             $dots[] = Html::tag('div', $slide->showOnAttributes + array(
-                    'class'                => 'n2-thumbnail-dot ' . $slideStyle,
+                    'class'                => 'n2-thumbnail-dot sharp-title-tab ' . $slideStyle,
                     'data-slide-public-id' => $slide->getPublicID(),
                     'role'                 => 'button',
                     'aria-label'           => $slide->getTitle(),

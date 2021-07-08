@@ -266,6 +266,7 @@ $allowedentitynames = is_array($allowedentitynames) ? $allowedentitynames : arra
 );
 
 class Sanitize {
+    private static $close_self_tags = array('br','img', 'hr');
 
     private static function getCharset() {
 
@@ -404,6 +405,28 @@ class Sanitize {
 
         // Back-compat.
         if ('single' === $_quote_style) $string = str_replace("'", '&#039;', $string);
+
+        $allowed_html_tags = apply_filters('sharp_slider_allow_slide_title_html_tags', array('br'));
+        if (empty($allowed_html_tags)) {
+            return $string;
+        }
+
+        foreach($allowed_html_tags as $allowed_html_tag) {
+            $replaces = array(
+                '<' . $allowed_html_tag . '>',
+                '</' . $allowed_html_tag . '>'
+            );
+            if (in_array($allowed_html_tag, static::$close_self_tags)) {
+                $replaces[] = '<' . $allowed_html_tag . '/>';
+            }
+
+            $searches = array();
+            foreach($replaces as $index => $search) {
+                $searches[$index] = htmlspecialchars($search);
+            }
+
+            $string = str_replace($searches, $replaces, $string);
+        }
 
         return $string;
     }
