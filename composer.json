@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "jankx/asset": "dev-master"
+        "jankx/asset": "*"
     },
     "minimum-stability": "dev",
     "autoload": {
