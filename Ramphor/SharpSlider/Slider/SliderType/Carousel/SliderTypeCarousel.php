@@ -1,7 +1,9 @@
 <?php
 namespace Ramphor\SharpSlider\Slider\SliderType\Carousel;
 
-class SliderTypeCarousel
+use Nextend\SmartSlider3\Slider\SliderType\AbstractSliderType;
+
+class SliderTypeCarousel extends AbstractSliderType
 {
     public function getName()
     {
