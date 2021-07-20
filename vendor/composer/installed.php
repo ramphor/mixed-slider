@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '86e5d9ad707a930ae42c93e3498fc84492222a55',
+    'reference' => '6158c6b46c302c6734929a16c5a0d02b2f7d8f58',
     'name' => 'ramphor/sharp-slider',
   ),
   'versions' => 
@@ -19,7 +19,17 @@
       array (
         0 => '9999999-dev',
       ),
-      'reference' => '3451d2a85089dc37ffbe198adf73ee0fb3b782d0',
+      'reference' => '7af4aadfb9679fdffdc7707c87c28672b0b439e1',
+    ),
+    'jankx/helpers' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '9999999-dev',
+      ),
+      'reference' => '73b3e35fa78d80a8476d255ba16b0541e7af388b',
     ),
     'ramphor/sharp-slider' => 
     array (
@@ -28,7 +38,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '86e5d9ad707a930ae42c93e3498fc84492222a55',
+      'reference' => '6158c6b46c302c6734929a16c5a0d02b2f7d8f58',
     ),
   ),
 );
