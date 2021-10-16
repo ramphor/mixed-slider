@@ -25,7 +25,7 @@ class ViewDisplay extends AbstractView {
 
         $sliderManager = new SliderManager($this, $this->sliderIDorAlias, false);
         $sliderManager->setUsage($this->usage);
-        echo $sliderManager->render(true);
+        echo $sliderManager->render(false);
 
         setlocale(LC_NUMERIC, $locale);
     }

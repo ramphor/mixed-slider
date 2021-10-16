@@ -28,8 +28,9 @@ class SliderTypeCarouselFrontend extends AbstractSliderTypeFrontend
         <?php
         execute_script("<script>var {$sliderId} = new Splide( '#{$sliderId}', {
             type: 'loop',
-            perPage: 3,
-            perMove: 3,
+            perPage: 4,
+            perMove: 4,
+            pagination: false,
         } ).mount();</script>");
     }
 }
