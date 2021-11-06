@@ -3,7 +3,7 @@
 Plugin Name: Sharp Slider
 Plugin URI: https://smartslider3.com/
 Description: The perfect all-in-one responsive slider solution for WordPress.
-Version: 3.5.0.9
+Version: 3.5.0.10
 Requires PHP: 7.0
 Requires at least: 4.9
 Author: Nextend
