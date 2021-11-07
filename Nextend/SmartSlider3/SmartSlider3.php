@@ -19,8 +19,9 @@ use Nextend\SmartSlider3\Slider\ResponsiveType\FullWidth\ResponsiveTypeFullWidth
 use Nextend\SmartSlider3\Slider\ResponsiveType\ResponsiveTypeFactory;
 use Nextend\SmartSlider3\Slider\SliderType\Block\SliderTypeBlock;
 use Nextend\SmartSlider3\Slider\SliderType\Simple\SliderTypeSimple;
-use Ramphor\SharpSlider\Slider\SliderType\Carousel\SliderTypeCarousel;
 use Nextend\SmartSlider3\Slider\SliderType\SliderTypeFactory;
+use Ramphor\SharpSlider\Slider\ResponsiveTypeLoader;
+use Ramphor\SharpSlider\Slider\SliderType\Carousel\SliderTypeCarousel;
 
 class SmartSlider3 {
 
@@ -38,6 +39,9 @@ class SmartSlider3 {
             $this,
             'sliderTypes'
         ));
+
+        // Load Reponsive Types
+        new ResponsiveTypeLoader();
 
         Plugin::addAction('PluggableFactorySliderResponsiveType', array(
             $this,
