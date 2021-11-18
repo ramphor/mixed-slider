@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jankx/asset.git",
-                "reference": "7af4aadfb9679fdffdc7707c87c28672b0b439e1"
+                "reference": "4789734413897545bbf9896b99c1d301492efc58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jankx/asset/zipball/7af4aadfb9679fdffdc7707c87c28672b0b439e1",
-                "reference": "7af4aadfb9679fdffdc7707c87c28672b0b439e1",
+                "url": "https://api.github.com/repos/jankx/asset/zipball/4789734413897545bbf9896b99c1d301492efc58",
+                "reference": "4789734413897545bbf9896b99c1d301492efc58",
                 "shasum": ""
             },
             "require": {
@@ -45,7 +45,7 @@
                 "issues": "https://github.com/jankx/asset/issues",
                 "source": "https://github.com/jankx/asset/tree/master"
             },
-            "time": "2021-07-19T21:26:57+00:00"
+            "time": "2021-10-05T23:54:29+00:00"
         },
         {
             "name": "jankx/helpers",
@@ -53,12 +53,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jankx/helpers.git",
-                "reference": "73b3e35fa78d80a8476d255ba16b0541e7af388b"
+                "reference": "2002eda36f4551f7703f432e2740e7a525d51387"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jankx/helpers/zipball/73b3e35fa78d80a8476d255ba16b0541e7af388b",
-                "reference": "73b3e35fa78d80a8476d255ba16b0541e7af388b",
+                "url": "https://api.github.com/repos/jankx/helpers/zipball/2002eda36f4551f7703f432e2740e7a525d51387",
+                "reference": "2002eda36f4551f7703f432e2740e7a525d51387",
                 "shasum": ""
             },
             "default-branch": true,
@@ -86,7 +86,7 @@
                 "issues": "https://github.com/jankx/helpers/issues",
                 "source": "https://github.com/jankx/helpers/tree/master"
             },
-            "time": "2021-07-03T12:55:32+00:00"
+            "time": "2021-09-28T16:13:36+00:00"
         }
     ],
     "packages-dev": [],
@@ -97,5 +97,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
