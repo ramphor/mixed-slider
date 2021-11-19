@@ -388,6 +388,22 @@ class Slider extends AbstractRenderable {
         }
 
         $needDivWrap = false;
+        if (!$this->isGroup && $this->features->responsive->type === 'fullpage') {
+            $attrs = array(
+                'data-based-on' => $this->features->responsive->sliderHeightBasedOn,
+            );
+
+            if (!$this->isAdminArea) {
+                $attrs['data-threshold'] = 150;
+            }
+
+            $subtract = $this->features->responsive->responsiveDecreaseSliderHeight;
+            if ($subtract) {
+                $attrs['style'] = '--subtract:' . $this->features->responsive->responsiveDecreaseSliderHeight . 'px';
+            }
+            $html        = Html::tag("ss3-fullpage", $attrs, $html);
+            $needDivWrap = true;
+        }
 
         if (!$this->isGroup && !$this->isAdmin && $this->features->responsive->forceFull) {
             $html        = Html::tag("ss3-force-full-width", array(
