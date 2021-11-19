@@ -14,6 +14,7 @@ use Nextend\Framework\View\Html;
 use Nextend\SmartSlider3\Application\Frontend\ApplicationTypeFrontend;
 use Nextend\SmartSlider3\Slider\Slider;
 use Nextend\SmartSlider3\Widget\SliderWidget;
+use Ramphor\SharpSlider\Application\Frontend\ApplicationTypeFrontend as RamphorApplicationTypeFrontend;
 
 abstract class AbstractSliderTypeFrontend {
 
@@ -153,8 +154,6 @@ abstract class AbstractSliderTypeFrontend {
     }
 
     public function enqueueAssets() {
-
-        Js::addStaticGroup(ApplicationTypeFrontend::getAssetsPath() . '/dist/smartslider-frontend.min.js', 'smartslider-frontend');
     }
 
     public function handleSliderMinHeight($minHeight) {

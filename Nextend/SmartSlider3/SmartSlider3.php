@@ -20,6 +20,7 @@ use Nextend\SmartSlider3\Slider\ResponsiveType\ResponsiveTypeFactory;
 use Nextend\SmartSlider3\Slider\SliderType\Block\SliderTypeBlock;
 use Nextend\SmartSlider3\Slider\SliderType\Simple\SliderTypeSimple;
 use Nextend\SmartSlider3\Slider\SliderType\SliderTypeFactory;
+use Ramphor\SharpSlider\Application\Frontend\ScriptManager;
 use Ramphor\SharpSlider\Slider\ResponsiveTypeLoader;
 use Ramphor\SharpSlider\Slider\SliderType\Carousel\SliderTypeCarousel;
 
@@ -53,7 +54,8 @@ class SmartSlider3 {
             'sliderGenerator'
         ));
 
-
+        $scriptManager = new ScriptManager();
+        add_action('wp_enqueue_scripts', array($scriptManager, 'init'));
     }
 
     public function sliderTypes() {
