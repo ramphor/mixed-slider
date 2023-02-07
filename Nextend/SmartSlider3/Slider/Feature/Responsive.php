@@ -664,10 +664,16 @@ class Responsive {
             }
         }
 
-
         $properties['responsive'] = array(
             'mediaQueries' => $this->mediaQueries,
-            'base'         => $this->slider->assets->base,
+            'base'         => $this->slider->assets ? $this->slider->assets->base : [
+                'slideOuterWidth' => 1200,
+                'slideOuterHeight' => 600,
+                'sliderWidth' => 1200,
+                'sliderHeight' => 600,
+                'slideWidth' => 1200,
+                'slideHeight' => 600,
+            ],
             'hideOn'       => array(
                 'desktopLandscape' => $this->hideOnDesktopLandscape,
                 'desktopPortrait'  => SmartSlider3Info::$forceDesktop ? false : $this->hideOnDesktopPortrait,

@@ -306,7 +306,14 @@ class Slider extends AbstractRenderable {
         if (!$this->isGroup) {
             $slider = $this->features->translateUrl->renderSlider($slider) . HTML::tag('ss3-loader', array(), '');
 
-            $slider = $this->features->align->renderSlider($slider, $this->assets->sizes['width']);
+            $slider = $this->features->align->renderSlider($slider, $this->assets ? $this->assets->sizes['width'] : [
+                'marginVertical' => 0,
+                'marginHorizontal' => 0,
+                'width' => 1200,
+                'height' => 600,
+                'canvasWidth' => 1200,
+                'canvasHeight' => 600,
+            ]);
             $slider = $this->features->margin->renderSlider($slider);
 
 
@@ -375,7 +382,14 @@ class Slider extends AbstractRenderable {
             }
         }
 
-        $sizes = $this->assets->sizes;
+        $sizes = $this->assets ? $this->assets->sizes : [
+            'marginVertical' => 0,
+            'marginHorizontal' => 0,
+            'width' => 1200,
+            'height' => 600,
+            'canvasWidth' => 1200,
+            'canvasHeight' => 600,
+        ];
 
         if ($rockedLoader && !empty($sizes['width']) && !empty($sizes['height'])) {
             $sliderAttributes['style'] = 'height:' . $sizes['height'] . 'px;';
