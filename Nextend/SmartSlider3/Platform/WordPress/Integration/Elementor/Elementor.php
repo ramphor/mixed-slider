@@ -49,12 +49,12 @@ class Elementor {
         ), -1);
 
 
-        add_action('elementor/widgets/widgets_registered', array(
+        add_action('elementor/widgets/register', array(
             $this,
             'action_widgets_registered'
         ), 100);
 
-        add_action('elementor/controls/controls_registered', array(
+        add_action('elementor/controls/register', array(
             $this,
             'action_controls_registered'
         ));
@@ -81,12 +81,11 @@ class Elementor {
     public function action_widgets_registered() {
 
         $widget_manager = Plugin::$instance->widgets_manager;
-        $widget_manager->register_widget_type(new ElementorWidgetSmartSlider());
+        $widget_manager->register(new ElementorWidgetSmartSlider());
     }
 
     public function action_controls_registered($controls_manager) {
-
-        $controls_manager->register_control('smartsliderfield', new ElementorControlSmartSlider());
+        $controls_manager->register(new ElementorControlSmartSlider());
     }
 
     public function forceShortcodeIframe() {
